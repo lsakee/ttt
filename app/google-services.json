@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "91472492228",
+    "project_id": "test-maoman",
+    "storage_bucket": "test-maoman.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:91472492228:android:bffbb65a017c7d6e8ebb91",
+        "android_client_info": {
+          "package_name": "com.example.myapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "91472492228-eim9n2943qo3qof39o453iivv2dv1mmr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyASwk9xXIYeM0rNHnX4xADmSTZVRcQbcZc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "91472492228-eim9n2943qo3qof39o453iivv2dv1mmr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

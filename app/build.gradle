@@ -15,7 +15,7 @@ android {
 
     defaultConfig {
         applicationId "com.example.myapplication"
-        minSdk 26
+        minSdk 28
         targetSdk 33
         versionCode 1
         versionName "1.0"
@@ -79,4 +79,7 @@ dependencies {
 
     // Epoxy Databinding
     implementation "com.airbnb.android:epoxy-databinding:3.9.0"
+
+    implementation 'com.github.nguyenhoanglam:ImagePicker:1.5.5'
+    implementation 'com.github.bumptech.glide:glide:4.11.0'
 }

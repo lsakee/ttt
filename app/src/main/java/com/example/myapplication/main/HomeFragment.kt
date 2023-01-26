@@ -1,5 +1,7 @@
 package com.example.myapplication.main
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -50,6 +52,11 @@ class HomeFragment : Fragment() {
         val subRvAdapter = SubRecyclerViewAdapter()
         binding.rvSub.layoutManager = LinearLayoutManager(requireContext())
         binding.rvSub.adapter = subRvAdapter
+
+        binding.btnKakaotalk.setOnClickListener {
+            val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://open.kakao.com/o/sGrtToVe"))
+            startActivity(intent)
+        }
 
         CoroutineScope(Dispatchers.IO).launch {
             RetrofitClient.apiService.fetchCategories().onSuccess {

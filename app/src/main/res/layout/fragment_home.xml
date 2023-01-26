@@ -10,7 +10,8 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:paddingBottom="60dp">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_recent"
@@ -23,31 +24,16 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-<!--        <View-->
-<!--            android:layout_width="40dp"-->
-<!--            android:layout_height="0dp"-->
-<!--            android:background="#50000000"-->
-<!--            app:layout_constraintBottom_toBottomOf="@id/rv_recent"-->
-<!--            app:layout_constraintStart_toStartOf="parent"-->
-<!--            app:layout_constraintTop_toTopOf="@id/rv_recent" />-->
-
-<!--        <View-->
-<!--            android:layout_width="40dp"-->
-<!--            android:layout_height="0dp"-->
-<!--            android:background="#50000000"-->
-<!--            app:layout_constraintBottom_toBottomOf="@id/rv_recent"-->
-<!--            app:layout_constraintEnd_toEndOf="parent"-->
-<!--            app:layout_constraintTop_toTopOf="@id/rv_recent" />-->
-
         <TextView
             android:id="@+id/tv_subtitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
+            android:fontFamily="@font/pretendard"
             android:text="습득물"
             android:textColor="@color/white"
-            android:textSize="18sp"
-            android:textStyle="bold"
+            android:textSize="24sp"
+            android:textFontWeight="100"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/rv_recent" />
 
@@ -59,6 +45,14 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_subtitle" />
+
+        <Button
+            android:id="@+id/btn_kakaotalk"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/rv_sub"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

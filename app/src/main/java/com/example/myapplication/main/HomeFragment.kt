@@ -1,16 +1,16 @@
 package com.example.myapplication.main
 
-import android.content.Intent
-import android.net.Uri
 import android.os.Bundle
-import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.AlphaAnimation
+import android.view.animation.Animation
+import android.view.animation.AnimationUtils
+import androidx.core.content.ContextCompat
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.LinearSnapHelper
-import androidx.recyclerview.widget.RecyclerView
 import com.example.myapplication.R
 import com.example.myapplication.databinding.FragmentHomeBinding
 import com.example.myapplication.main.adapter.RecentRecyclerViewAdapter
@@ -22,7 +22,7 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Dispatchers.Main
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
+
 
 class HomeFragment : Fragment() {
     private lateinit var binding: FragmentHomeBinding
@@ -53,9 +53,37 @@ class HomeFragment : Fragment() {
         binding.rvSub.layoutManager = LinearLayoutManager(requireContext())
         binding.rvSub.adapter = subRvAdapter
 
+        binding.stickyNestedScrollView.run {
+            header = binding.clHeader
+            stickListener = { _ ->
+                setBackgroundColor(ContextCompat.getColor(requireContext(), R.color.white))
+                binding.clHeader.setBackgroundColor(ContextCompat.getColor(requireContext(), R.color.white))
+                binding.tvSubtitle.setTextColor(ContextCompat.getColor(requireContext(), R.color.black))
+                binding.tvSubtitle2.setTextColor(ContextCompat.getColor(requireContext(), R.color.black))
+            }
+            freeListener = { _ ->
+                setBackgroundColor(ContextCompat.getColor(requireContext(), R.color.black))
+                binding.clHeader.setBackgroundColor(ContextCompat.getColor(requireContext(), R.color.black))
+                binding.tvSubtitle.setTextColor(ContextCompat.getColor(requireContext(), R.color.white))
+                binding.tvSubtitle2.setTextColor(ContextCompat.getColor(requireContext(), R.color.white))
+            }
+        }
+
         binding.btnKakaotalk.setOnClickListener {
-            val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://open.kakao.com/o/sGrtToVe"))
-            startActivity(intent)
+            binding.viewBottomSheetShadow.visibility = View.VISIBLE
+
+            binding.cardViewBottomSheet.visibility = View.VISIBLE
+            binding.cardViewBottomSheet.startAnimation(AnimationUtils.loadAnimation(
+                context,
+                R.anim.slide_up))
+        }
+
+        binding.tvBottomSheetClose.setOnClickListener {
+            binding.cardViewBottomSheet.startAnimation(AnimationUtils.loadAnimation(
+                context,
+                R.anim.slide_down))
+            binding.cardViewBottomSheet.visibility = View.GONE
+            binding.viewBottomSheetShadow.visibility = View.GONE
         }
 
         CoroutineScope(Dispatchers.IO).launch {

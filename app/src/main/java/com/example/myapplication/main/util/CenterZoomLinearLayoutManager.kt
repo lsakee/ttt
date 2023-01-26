@@ -33,7 +33,6 @@ class CenterZoomLinearLayoutManager(
             val child = getChildAt(i) as View
             val d = Math.min(d1, Math.abs(midpoint - (getDecoratedRight(child) + getDecoratedLeft(child)) / 2f))
             val scale = 1f - mShrinkAmount * d / d1
-            child.scaleX = scale
             child.scaleY = scale
 
             val viewShadow = child.findViewById<View>(R.id.view_shadow)

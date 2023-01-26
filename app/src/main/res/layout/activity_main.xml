@@ -18,6 +18,16 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_marginBottom="-15dp"
+        app:cardBackgroundColor="#11FF11"
+        app:cardCornerRadius="19dp"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
         android:id="@+id/navigation_bar"
         android:layout_width="match_parent"
         android:layout_height="80dp"
